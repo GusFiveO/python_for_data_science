@@ -15,16 +15,18 @@ NESTED_MORSE = {
     '7':'--...', '8':'---..', '9':'----.',
     '0':'-----', ', ':'--..--', '.':'.-.-.-',
     '?':'..--..', '/':'-..-.', '-':'-....-',
-    '(':'-.--.', ')':'-.--.-'
+    '(':'-.--.', ')':'-.--.-', ' ': '/'
 	}
 
 def main(arg):
+	res = ""
 	for char in arg:
-		if char.upper() not in NESTED_MORSE.keys():
-			print(char.upper())
-			return print("AssertionError: the arguments are bad")
-	print(arg)
-
+		if char.upper() in NESTED_MORSE.keys():
+			res += NESTED_MORSE[char.upper()]
+		else:
+			print("AssertionError: the arguments are bad")
+			return
+	print(res)
 	
 	
 
