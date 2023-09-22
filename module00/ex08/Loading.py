@@ -13,7 +13,11 @@ def ft_tqdm(lst: range) -> None:
 			progress =  round(i / length * 100) + 1
 		# 6 + len(range) * 2
 		print(f"{progress:3}%|", end="")
-		print('=' * round(i / length * term_width - 15), end="\r")
+		# progress_equal = '=' * round(i / length * term_width - 15)
+		# progress_space = ' ' * (term_width -11 - round(i / length * term_width - 15))
+		# print(progress_equal, progress_space, end="\r")
+		# progress_space too long so retour a la ligne
+		print(progress_equal, end="\r")
 		yield i
 	print()
 
