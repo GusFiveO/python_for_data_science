@@ -1,0 +1,12 @@
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+  { name="Augustin LORAIN", email="alorain@student.42.fr" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+]
+
