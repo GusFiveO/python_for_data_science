@@ -1,5 +1,4 @@
 from load_image import ft_load
-from array2D import slice_me
 import numpy as np
 import cv2 as cv
 
