@@ -5,7 +5,6 @@ def load(path: str):
 	csv = {}
 	try:
 		csv = polars.read_csv(path)
-		print(type(csv))
 	except FileNotFoundError as error:
 		print(error)
 		return None
