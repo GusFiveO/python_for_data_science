@@ -2,18 +2,22 @@
 
 
 def all_thing_is_obj(obj: any):
+	type_dic = {
+		list: "List",
+		tuple: "Tuple",
+		set: "Set",
+		dict: "Dict",
+		str: "String"
+	}
+
 	object_type = type(obj)
-	if isinstance(obj, list) == True:
-		print(f"List : {object_type}")
-	elif isinstance(obj, tuple) == True:
-		print(f"Tuple : {object_type}")
-	elif isinstance(obj, set) == True:
-		print(f"Set : {object_type}")
-	elif isinstance(obj, dict) == True:
-		print(f"Dict : {object_type}")
-	elif isinstance(obj, str) == True:
-		print(f"Brian is in the kitchen : {object_type}")
+	type_dic_name = type_dic.get(object_type)	
+
+	if type_dic_name == "String":
+	 	print(f"{obj} is in the kitchen : {object_type}")
+	elif type_dic_name:
+	 	print(f"{type_dic_name} : {object_type}")
 	else:
-		print("Type not found")
+	 	print("Type not found")
 	return 42
 
