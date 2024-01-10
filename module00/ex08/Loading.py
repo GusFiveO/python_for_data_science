@@ -1,7 +1,6 @@
-from time import sleep
-from tqdm import tqdm
 import sys
 import os
+
 
 def ft_tqdm(lst):
     total = len(lst)
@@ -13,16 +12,9 @@ def ft_tqdm(lst):
         filled_length = int(bar_length * progress)
         bar = '=' * filled_length + '>' + '-' * (bar_length - filled_length)
         percentage = f'{int(progress * 100):3}%'
-        sys.stdout.write(f'\r{percentage} [{bar}] {i:{len(str(total))}}/{total}')
+        sys.stdout.write(
+            f'\r{percentage} [{bar}] {i:{len(str(total))}}/{total}')
         sys.stdout.flush()
-    
-    sys.stdout.write(f'\r{percentage} [{bar}] {i + 1:{len(str(total))}}/{total}\n')
+    sys.stdout.write(
+        f'\r{percentage} [{bar}] {i + 1:{len(str(total))}}/{total}\n')
     sys.stdout.flush()
-
-def main():
-	"""main"""
-	for i in ft_tqdm(range(1383)):
-		sleep(0.01)
-
-if __name__ == "__main__":
-	main()
