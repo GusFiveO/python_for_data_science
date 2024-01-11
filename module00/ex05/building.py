@@ -40,6 +40,7 @@ def main(args: str):
             arg = input("What is the text to count?\n")
             arg += '\n'
         except EOFError:
+            print(repr(arg))
             pass
     else:
         arg = args[1]
