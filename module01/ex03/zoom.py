@@ -1,18 +1,25 @@
 from load_image import ft_load
-import numpy as np
 import cv2 as cv
 
 
 def zoom(path: str):
-	img = ft_load(path)
-	print(img)
-	zoomed_img = img[100:500, 450:850, :1]
-	print(zoomed_img.shape)
-	print(zoomed_img.shape)
-	cv.imshow("zoomed", zoomed_img)
-	cv.imshow("original", img)
-	cv.waitKey(0)
-	return None
+    """Zoom in an image"""
+    img = ft_load(path)
+    if img is None:
+        return None
+    print(img)
+    try:
+        zoomed_img = img[100:500, 450:850, :1]
+        print(f"New shape after slicing is: { zoomed_img.shape} or \
+               {zoomed_img.shape[:-1]}")
+        print(zoomed_img)
+        cv.imshow("zoomed", zoomed_img)
+        # cv.imshow("original", img)
+        cv.waitKey(0)
+    except Exception:
+        print("The image content is not the same as excpected")
+    return None
+
 
 if __name__ == "__main__":
-	zoom("animal.jpeg")
+    zoom("animal.jpeg")
