@@ -15,9 +15,22 @@ def zoom(path: str):
         print(zoomed_img)
         cv.imshow("zoomed", zoomed_img)
         # cv.imshow("original", img)
-        cv.waitKey(0)
+        while True:
+
+            # Wait for a key event (1 ms)
+            key = cv.waitKey(1)
+
+            # Check if the window is still open
+            if cv.getWindowProperty('zoomed', cv.WND_PROP_VISIBLE) < 1:
+                print("Window closed")
+                break
+
+            # Check if the 'esc' key was pressed (27 is the ASCII value for 'esc')
+            if key == 27:
+                print("ESC key pressed")
+                break
     except Exception:
-        print("The image content is not the same as excpected")
+        print("The image content is not the same as expected")
     return None
 
 
