@@ -12,4 +12,7 @@ print("---")
 Lyanna = Stark("Lyanna", False)
 print(Lyanna.__dict__)
 
-#hodor = Character("hodor")
+try:
+    hodor = Character("hodor")
+except Exception as e:
+    print(e)
