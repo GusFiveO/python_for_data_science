@@ -6,12 +6,10 @@ import cv2 as cv
 def rotate_array(array):
     """rotate an array"""
     rows, cols = array.shape[:2]
-    print(array.shape)
 
     twisted_array = np.zeros((rows, cols, 1), dtype=np.uint8)
     for y in range(rows):
         for x in range(cols):
-            # rotated_array[rows - x - 1, y] = array[y, x]
             twisted_array[y, cols - x - 1] = array[y, x]
     rotated_array = np.zeros((cols, rows, 1), dtype=np.uint8)
     for y in range(rows):
@@ -28,10 +26,8 @@ def rotate(path: str):
     try:
         cropped_img = img[100:500, 450:850, 2:]
         rotated_img = rotate_array(cropped_img)
-        print(f"New shape after Transpose: {rotated_img.shape}")
+        print(f"New shape after Transpose: {rotated_img.shape[:-1]}")
         print(rotated_img)
-        # cv.imshow("zoomed", cropped_img)
-        # cv.imshow("original", img)
         cv.imshow("rotated", rotated_img)
         while True:
 
