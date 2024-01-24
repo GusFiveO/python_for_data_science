@@ -7,14 +7,12 @@ def zoom(path: str):
     img = ft_load(path)
     if img is None:
         return None
-    print(img)
     try:
         zoomed_img = img[100:500, 450:850, :1]
         print(f"New shape after slicing is: { zoomed_img.shape} or \
-               {zoomed_img.shape[:-1]}")
+{zoomed_img.shape[:-1]}")
         print(zoomed_img)
         cv.imshow("zoomed", zoomed_img)
-        # cv.imshow("original", img)
         while True:
 
             key = cv.waitKey(1)
