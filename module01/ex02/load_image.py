@@ -10,6 +10,7 @@ def ft_load(path: str) -> np.array:
             print("Filepath gived as parameter is not valid")
             return None
         print(f"The shape of this image is: {img.shape}")
+        print(img)
         return img
     except Exception:
         print("The image path must be valid")
