@@ -13,13 +13,15 @@ class Baratheon(Character):
         self.hairs = "dark"
 
     def __str__(self):
-        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+        """Lannister __str__ method"""
+        pass
 
     def __repr__(self):
+        """Lannister __repr__ method"""
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def die(self):
-        """die method"""
+        """Baratheon die method"""
         if self.is_alive:
             self.is_alive = False
 
@@ -36,16 +38,19 @@ class Lannister(Character):
         self.hairs = "light"
 
     def __str__(self):
-        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+        """Lannister __str__ method"""
+        pass
 
     def __repr__(self):
+        """Lannister __repr__ method"""
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
-    def create_lannister(first_name: str, is_alive: bool):
-        """create a lannister"""
-        return Lannister(first_name, is_alive)
+    @classmethod
+    def create_lannister(cls, first_name: str, is_alive: bool):
+        """Lannister create a lannister"""
+        return cls(first_name, is_alive)
 
     def die(self):
-        """die method"""
+        """Lannister die method"""
         if self.is_alive:
             self.is_alive = False
