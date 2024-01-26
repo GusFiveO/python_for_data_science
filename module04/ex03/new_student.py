@@ -1,6 +1,6 @@
 import random
 import string
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 def generate_id() -> str:
@@ -11,14 +11,9 @@ def generate_id() -> str:
 class Student:
     name: str
     surname: str
-    active: bool
-    login: str
-    id: str
+    active: bool = field(default=True, init=False)
+    login: str = field(init=False)
+    id: str = field(default_factory=generate_id, init=False)
 
-    def __init__(self, name: str, surname: str):
-        """init function"""
-        self.name = name
-        self.surname = surname
-        self.active = True
-        self.login = f"{name[0]}{surname}"
-        self.id = generate_id()
+    def __post_init__(self):
+        self.login = f"{self.name[0]}{self.surname}"
